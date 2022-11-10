@@ -16,3 +16,8 @@ clean:
 	docker system prune -a
 	docker volume rm srcs_db
 	docker volume rm srcs_wordpress
+
+
+
+
+	docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q) 2>/dev/null
